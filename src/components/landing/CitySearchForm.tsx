@@ -297,7 +297,7 @@ export function CitySearchForm({ initialValue }: CitySearchFormProps) {
         </div>
 
         <Button type="submit" variant="primary" size="lg" isLoading={isLoading}>
-          Get My Report — $19
+          Get Started — from $19
         </Button>
       </div>
       {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
