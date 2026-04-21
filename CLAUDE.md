@@ -130,6 +130,21 @@ RESEND_FROM_EMAIL=ArbitrageIQ <reports@arbitrage-iq.com>
 | Cloudflare | DNS + CDN | cloudflare.com |
 | GitHub | Source control | github.com/jamesdholen1-wq/ArbitrageIQ |
 
+## DNS Configuration (Cloudflare)
+
+Two records required — both set to **DNS only (grey cloud, not proxied)**:
+
+| Type  | Name | Value                  |
+|-------|------|------------------------|
+| A     | @    | 76.76.21.21            |
+| CNAME | www  | cname.vercel-dns.com   |
+
+Cloudflare proxy (orange cloud) must be OFF — Vercel handles SSL and routing directly.
+
+## Stripe Account Status
+
+Live mode payments are pending Stripe's account review (submitted April 20, 2026). Once approved, all checkout flows are confirmed working — the processing error was account verification, not a code issue. No code changes needed when Stripe approves.
+
 ## Known Gaps (non-blocking, future work)
 
 - `checkout/success/page.tsx` is static — doesn't show purchased market names
