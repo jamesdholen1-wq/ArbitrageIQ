@@ -126,6 +126,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section — high on page for conversion */}
+      <PricingSection />
+
       {/* Featured Markets Section */}
       <FeaturedMarketsSection onSelectMarket={handleSelectMarket} />
 
@@ -134,9 +137,6 @@ export default function Home() {
 
       {/* How It Works Section */}
       <HowItWorksSection />
-
-      {/* Pricing Section */}
-      <PricingSection />
 
       {/* Market Request Form */}
       <MarketRequestForm />
