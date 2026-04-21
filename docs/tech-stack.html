@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArbitrageIQ — Technical Stack Overview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #18181b;
+      background: #fff;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 48px;
+    }
+
+    /* Cover */
+    .cover {
+      border-bottom: 3px solid #059669;
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+    .cover-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #059669;
+      margin-bottom: 12px;
+    }
+    .cover h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #18181b;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .cover-sub {
+      font-size: 15px;
+      color: #52525b;
+      margin-bottom: 20px;
+    }
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      font-size: 12px;
+      color: #71717a;
+    }
+    .cover-meta span strong {
+      color: #18181b;
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e4e4e7;
+    }
+    .section-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #059669;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #18181b;
+    }
+
+    /* Cards grid */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .cards.three { grid-template-columns: repeat(3, 1fr); }
+    .cards.one { grid-template-columns: 1fr; }
+
+    .card {
+      border: 1px solid #e4e4e7;
+      border-radius: 8px;
+      padding: 16px;
+      background: #fafafa;
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .card-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #18181b;
+    }
+    .card-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .badge-green { background: #d1fae5; color: #065f46; }
+    .badge-blue  { background: #dbeafe; color: #1e40af; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-zinc  { background: #f4f4f5; color: #3f3f46; }
+    .badge-purple { background: #ede9fe; color: #5b21b6; }
+
+    .card-desc {
+      font-size: 12px;
+      color: #52525b;
+      line-height: 1.5;
+    }
+    .card-reason {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #059669;
+      font-weight: 600;
+    }
+    .card-reason::before { content: "→ "; }
+
+    /* Flow diagram */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 8px 0;
+    }
+    .flow-step {
+      background: #f4f4f5;
+      border: 1px solid #e4e4e7;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #18181b;
+      white-space: nowrap;
+    }
+    .flow-arrow {
+      font-size: 14px;
+      color: #059669;
+      margin: 0 6px;
+      font-weight: 700;
+    }
+    .flow-label {
+      font-size: 10px;
+      color: #71717a;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* Pricing table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th {
+      text-align: left;
+      padding: 8px 12px;
+      background: #18181b;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #f4f4f5;
+      color: #3f3f46;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #fafafa; }
+    .price { font-weight: 700; color: #059669; }
+    .savings { color: #059669; font-size: 11px; }
+
+    /* Insight list */
+    .insights { list-style: none; }
+    .insights li {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f4f4f5;
+      font-size: 12px;
+      color: #3f3f46;
+    }
+    .insights li:last-child { border-bottom: none; }
+    .insight-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: #059669;
+      width: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .insight-title {
+      font-weight: 700;
+      color: #18181b;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Cost table */
+    .cost-note {
+      font-size: 11px;
+      color: #71717a;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid #e4e4e7;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #a1a1aa;
+    }
+
+    @media print {
+      body { font-size: 12px; }
+      .page { padding: 40px 36px; max-width: 100%; }
+      .cards { gap: 8px; }
+      .card { padding: 12px; }
+      .section { margin-bottom: 28px; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="cover-tag">Technical Documentation</div>
+    <h1>ArbitrageIQ</h1>
+    <div class="cover-sub">Full-stack technical overview — services, architecture, and rationale</div>
+    <div class="cover-meta">
+      <span><strong>Launch Date</strong> April 20, 2026</span>
+      <span><strong>Domain</strong> arbitrage-iq.com</span>
+      <span><strong>Version</strong> 1.0 — MVP Launch</span>
+      <span><strong>Prepared by</strong> Jim Holen</span>
+    </div>
+  </div>
+
+  <!-- 1. Product Overview -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Product Overview</h2>
+    </div>
+    <div class="cards one">
+      <div class="card">
+        <div class="card-desc">
+          ArbitrageIQ is a B2C SaaS product that sells on-demand PDF market analysis reports for Short-Term Rental (STR) investors. Users search a city or select a market bundle, pay once via Stripe, and receive professionally formatted PDF report(s) instantly by email — no account required, no subscription. The product targets rental arbitrage investors who need market intelligence (nightly rates, occupancy, seasonality, regulatory risk) before committing to a lease.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#71717a;margin-bottom:8px;">Purchase Flow</div>
+      <div class="flow">
+        <div class="flow-step">User searches city</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Stripe Checkout</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Webhook fires</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">PDF generated</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Email delivered</div>
+      </div>
+      <div class="flow-label">Average time from payment to inbox: &lt;30 seconds</div>
+    </div>
+  </div>
+
+  <!-- 2. Frontend Tech Stack -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Frontend Tech Stack</h2>
+    </div>
+    <div class="cards three">
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Next.js 16</div>
+          <span class="card-badge badge-zinc">App Router</span>
+        </div>
+        <div class="card-desc">React framework with file-based routing, server components, and API routes built in. Eliminates the need for a separate backend server.</div>
+        <div class="card-reason">One codebase handles UI, API routes, and webhook endpoints</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">TypeScript</div>
+          <span class="card-badge badge-blue">Strict</span>
+        </div>
+        <div class="card-desc">Typed superset of JavaScript. Catches bugs at compile time rather than runtime — critical when handling payment data and PDF generation.</div>
+        <div class="card-reason">Zero runtime type errors in payment + PDF flow</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Tailwind CSS v4</div>
+          <span class="card-badge badge-zinc">Utility-first</span>
+        </div>
+        <div class="card-desc">Utility-first CSS framework. Styles live in component markup — no separate stylesheet files, no naming conflicts, instant dark mode support.</div>
+        <div class="card-reason">Fast UI iteration without context switching</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">React 19</div>
+          <span class="card-badge badge-zinc">UI Layer</span>
+        </div>
+        <div class="card-desc">Component-based UI library. Server Components reduce JavaScript sent to the browser. Client Components used only where interactivity is required.</div>
+        <div class="card-reason">Minimal client JS — faster load times</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">@react-pdf/renderer</div>
+          <span class="card-badge badge-amber">Server only</span>
+        </div>
+        <div class="card-desc">Renders React component trees into PDF documents. Used server-side only (incompatible with the DOM). Produces professional, branded PDF reports.</div>
+        <div class="card-reason">Programmatic PDF — no external PDF service needed</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Geist Font</div>
+          <span class="card-badge badge-zinc">Local</span>
+        </div>
+        <div class="card-desc">Vercel's design system font, loaded from the local npm package. Avoids Google Fonts network calls that caused infinite dev server hangs on Windows.</div>
+        <div class="card-reason">Reliable local font loading, no external dependency</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Service Stack -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>Service Stack</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Stripe</div>
+          <span class="card-badge badge-green">Payments</span>
+        </div>
+        <div class="card-desc">Handles all payment processing via hosted Checkout sessions. No card data touches our servers. Webhook delivers <code>checkout.session.completed</code> events to trigger PDF generation and email delivery.</div>
+        <div class="card-reason">PCI compliant out of the box, zero payment infrastructure to maintain</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Resend</div>
+          <span class="card-badge badge-blue">Email</span>
+        </div>
+        <div class="card-desc">Transactional email API purpose-built for developers. Sends PDF attachments reliably with simple base64 encoding. Domain verification ensures strong deliverability.</div>
+        <div class="card-reason">Developer-friendly API, high deliverability, generous free tier</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Vercel</div>
+          <span class="card-badge badge-zinc">Hosting</span>
+        </div>
+        <div class="card-desc">Serverless hosting platform with native Next.js support. Auto-deploys from GitHub on every push to main. Zero-config SSL, edge network, and built-in environment variable management.</div>
+        <div class="card-reason">Git push = production deploy, no DevOps required</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Cloudflare</div>
+          <span class="card-badge badge-amber">DNS + CDN</span>
+        </div>
+        <div class="card-desc">Manages DNS for arbitrage-iq.com. Provides DDoS protection, fast global DNS propagation, and free SSL certificates. Acts as a CDN layer in front of Vercel.</div>
+        <div class="card-reason">Fastest DNS propagation, free DDoS protection, free tier</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">GitHub</div>
+          <span class="card-badge badge-zinc">Source Control</span>
+        </div>
+        <div class="card-desc">Hosts the source repository. Vercel watches the main branch and deploys automatically on every push. Also provides the remote source for Claude Code scheduled agents to clone.</div>
+        <div class="card-reason">Triggers Vercel deploys + enables remote agent access</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Claude Code (Anthropic)</div>
+          <span class="card-badge badge-purple">AI Agents</span>
+        </div>
+        <div class="card-desc">Scheduled remote agents run in Anthropic's cloud. The Weekly Market Research agent clones the repo, web-searches current STR data for all 15 markets, and commits a structured update report every Sunday at 12am ET.</div>
+        <div class="card-reason">Keeps static market data fresh without manual research effort</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Pricing Model -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Pricing Model</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Package</th>
+          <th>Price</th>
+          <th>Markets</th>
+          <th>Per Report</th>
+          <th>Savings vs Single</th>
+          <th>Target Buyer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Single Report</strong></td>
+          <td class="price">$19</td>
+          <td>1 city</td>
+          <td>$19.00</td>
+          <td>—</td>
+          <td>First-time buyers, testing one market</td>
+        </tr>
+        <tr>
+          <td><strong>Analyst Pack</strong> ⭐ Most Popular</td>
+          <td class="price">$47</td>
+          <td>3 cities</td>
+          <td>$15.67</td>
+          <td class="savings">Save $10</td>
+          <td>Comparing a short list of markets</td>
+        </tr>
+        <tr>
+          <td><strong>Investor Pack</strong></td>
+          <td class="price">$67</td>
+          <td>5 cities</td>
+          <td>$13.40</td>
+          <td class="savings">Save $28</td>
+          <td>Active investors expanding portfolio</td>
+        </tr>
+        <tr>
+          <td><strong>Pro Bundle</strong> 🏆 Best Value</td>
+          <td class="price">$97</td>
+          <td>All 15 cities</td>
+          <td>$6.47</td>
+          <td class="savings">Save $188</td>
+          <td>Serious investors, arbitrage operators</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cost-note">All packages are one-time purchases. No subscriptions. Reports delivered as PDF email attachments within 30 seconds of payment.</div>
+  </div>
+
+  <!-- 5. Data Architecture -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>Data Architecture</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">markets.json</div>
+          <span class="card-badge badge-green">Static · Server-side</span>
+        </div>
+        <div class="card-desc">Single source of truth for all market data. Contains 15 markets with nightly rates, occupancy, seasonality, competition level, regulatory risk, and Go/Caution/Avoid verdict. Case-insensitive city+state matching. To add a market: add one JSON entry — no code changes required.</div>
+        <div class="card-reason">Zero database infrastructure, instant reads, version-controlled data</div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">waitlist.json</div>
+          <span class="card-badge badge-amber">File-backed · Runtime</span>
+        </div>
+        <div class="card-desc">Captures email + city for users requesting unsupported markets. Created at runtime. Appropriate for MVP/single-instance deployments. Not suitable for multi-region serverless at scale — migrate to a database (PlanetScale, Supabase) when needed.</div>
+        <div class="card-reason">Zero-infrastructure demand capture for MVP validation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Agent Architecture -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Agent Architecture</h2>
+    </div>
+    <div class="cards one">
+      <div class="card">
+        <div class="card-desc" style="margin-bottom:12px;">
+          A parent-child agent model keeps each agent focused and context-lean. Child agents run independently on schedules, write structured outputs to <code>agents/outputs/{name}/report.md</code>, and never modify production data directly. A parent agent (future) will synthesize all child outputs into a single weekly action report.
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th>Type</th>
+              <th>Schedule</th>
+              <th>Output</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Weekly Market Research</strong></td>
+              <td>Child</td>
+              <td>Sunday 12am ET</td>
+              <td>agents/outputs/market-research/report.md</td>
+              <td class="savings">Live</td>
+            </tr>
+            <tr>
+              <td><strong>Parent Synthesis Agent</strong></td>
+              <td>Parent</td>
+              <td>Sunday 6am ET</td>
+              <td>agents/PARENT_REPORT.md</td>
+              <td style="color:#71717a;">Planned</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Cost Structure -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>Cost Structure</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Plan</th>
+          <th>Monthly Cost</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vercel</strong></td>
+          <td>Hobby (free)</td>
+          <td>$0</td>
+          <td>Pro ($20/mo) needed for team features or SLAs</td>
+        </tr>
+        <tr>
+          <td><strong>Cloudflare</strong></td>
+          <td>Free</td>
+          <td>$0</td>
+          <td>DNS + DDoS protection included</td>
+        </tr>
+        <tr>
+          <td><strong>Resend</strong></td>
+          <td>Free tier</td>
+          <td>$0</td>
+          <td>100 emails/day, 3,000/mo. Pro at $20/mo for more</td>
+        </tr>
+        <tr>
+          <td><strong>Stripe</strong></td>
+          <td>Pay-per-use</td>
+          <td>~2.9% + $0.30</td>
+          <td>~$0.85 fee on a $19 transaction. No monthly fee.</td>
+        </tr>
+        <tr>
+          <td><strong>GitHub</strong></td>
+          <td>Free</td>
+          <td>$0</td>
+          <td>Public or private repo</td>
+        </tr>
+        <tr>
+          <td><strong>Claude Agent (Resarch)</strong></td>
+          <td>Pay-per-use</td>
+          <td>~$0.50–2.00</td>
+          <td>Weekly run, Sonnet 4.6 pricing per token</td>
+        </tr>
+        <tr>
+          <td><strong>Domain</strong></td>
+          <td>Annual</td>
+          <td>~$1.00</td>
+          <td>~$10–15/year via Cloudflare Registrar</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cost-note">Total fixed monthly cost at launch: ~$1–2/month. Variable cost scales only with revenue (Stripe fees) and agent usage.</div>
+  </div>
+
+  <!-- 8. Replication Insights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2>Replication Insights — Building the Next Product</h2>
+    </div>
+    <ul class="insights">
+      <li>
+        <div class="insight-num">01</div>
+        <div>
+          <span class="insight-title">Static JSON > database for MVP data</span>
+          A JSON file checked into the repo is faster to build, free to host, and version-controlled. Only migrate to a real database when you have concurrent writes or multi-instance deployments. For read-heavy products, static data is almost always the right MVP choice.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">02</div>
+        <div>
+          <span class="insight-title">Stripe webhook is the backbone of digital goods delivery</span>
+          The pattern — Checkout session → webhook → fulfill — is battle-tested. Always return HTTP 200 from webhooks even on errors to prevent Stripe retries. Log errors for manual investigation. Never trust that payment metadata will survive the round trip without explicit storage.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">03</div>
+        <div>
+          <span class="insight-title">Commit before you deploy</span>
+          Vercel deploys whatever is on GitHub — not your local machine. Forgetting to push is the #1 cause of "my changes aren't showing up" and "no framework detected" errors. Always verify the GitHub repo reflects your local state before connecting to Vercel.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">04</div>
+        <div>
+          <span class="insight-title">Use live Stripe keys from day one in production</span>
+          Test keys produce test transactions that never settle. The moment you point a real domain at your app, switch to live keys. Register a production webhook endpoint against the real URL immediately — without it, no orders fulfill.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">05</div>
+        <div>
+          <span class="insight-title">Anchor pricing drives bundles</span>
+          The Pro Bundle ($97, save $188) exists primarily to make the Analyst Pack ($47) feel like a bargain. Classic anchoring. Place the "Most Popular" badge on the option you want to sell most. Showing per-report pricing ($15.67 vs $19) makes the value concrete.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">06</div>
+        <div>
+          <span class="insight-title">AI agents replace manual research workflows</span>
+          A weekly Claude agent that researches and reports is cheaper and more consistent than manual data gathering. The parent-child architecture — each agent writes one file, parent synthesizes — keeps context lean and agents composable. Design for this from day one.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">07</div>
+        <div>
+          <span class="insight-title">CLAUDE.md is the handoff document</span>
+          Every architecture decision, known gap, naming convention, and flow should be in CLAUDE.md. A new Claude Code session with a thorough CLAUDE.md picks up in minutes rather than hours. Treat it as a living document — update it after every meaningful session.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">08</div>
+        <div>
+          <span class="insight-title">Vercel + Cloudflare + Resend is the zero-ops stack</span>
+          This combination covers hosting, CDN, DNS, email, and SSL with zero server management. Total fixed cost under $5/month. Scales to thousands of users before any infrastructure changes are needed. Use it as the default stack for every new B2C digital product.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">09</div>
+        <div>
+          <span class="insight-title">Test the full flow with your own card before launch</span>
+          Type checking and unit tests verify code. They do not verify that Stripe webhooks fire, that PDFs generate correctly, or that emails land in inboxes. Always do a real end-to-end purchase to your own email before going public. It takes 2 minutes and catches real issues.
+        </div>
+      </li>
+      <li>
+        <div class="insight-num">10</div>
+        <div>
+          <span class="insight-title">Conversion placement matters more than copy</span>
+          Moving the pricing section above the feature grid produced an immediate layout improvement. Users should see the offer before they see the justification. Hero → Price → Social Proof → Features is consistently the highest-converting order for digital products.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <span>ArbitrageIQ Technical Stack Overview · v1.0</span>
+    <span>arbitrage-iq.com · Launched April 20, 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
