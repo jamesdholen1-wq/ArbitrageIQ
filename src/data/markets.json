@@ -1,0 +1,379 @@
+{
+  "markets": [
+    {
+      "city": "New York",
+      "state": "NY",
+      "averageNightlyRate": 289,
+      "monthlyRevenuePotential": 6515,
+      "occupancyRate": 75,
+      "seasonality": {
+        "highMonths": ["September", "October", "November", "December"],
+        "lowMonths": ["January", "February"],
+        "peakMonth": "December",
+        "slowestMonth": "February"
+      },
+      "recommendedPropertyType": "1BR",
+      "recommendation": "caution",
+      "marketNotes": [
+        "CRITICAL: NYC Local Law 18 strictly regulates STRs - hosts must be present during stays under 30 days",
+        "Only Class A multiple dwellings with proper registration can legally operate as STRs",
+        "Manhattan and Brooklyn command highest ADR but face strictest enforcement",
+        "Focus on 30+ day stays to avoid registration requirements - strong demand from relocations",
+        "Consider co-hosting model with registered hosts rather than direct arbitrage",
+        "Event-driven pricing: Fashion Week, UN General Assembly, and holidays drive 40%+ rate increases"
+      ],
+      "competitionLevel": "high",
+      "regulatoryRisk": "high"
+    },
+    {
+      "city": "Los Angeles",
+      "state": "CA",
+      "averageNightlyRate": 245,
+      "monthlyRevenuePotential": 5512,
+      "occupancyRate": 75,
+      "seasonality": {
+        "highMonths": ["June", "July", "August", "December"],
+        "lowMonths": ["January", "November"],
+        "peakMonth": "July",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "caution",
+      "marketNotes": [
+        "Home Sharing Ordinance requires registration and limits STRs to primary residence only",
+        "Maximum 120 days/year for non-primary residence without Extended Home Sharing permit",
+        "Hollywood, Santa Monica, and Venice Beach command premium rates but have strict local rules",
+        "Santa Monica has near-total STR ban - avoid this submarket entirely",
+        "Strong demand from entertainment industry - longer stays from production crews",
+        "Consider furnished housing arbitrage (30+ days) to avoid STR restrictions while capturing film/TV demand"
+      ],
+      "competitionLevel": "high",
+      "regulatoryRisk": "high"
+    },
+    {
+      "city": "Chicago",
+      "state": "IL",
+      "averageNightlyRate": 198,
+      "monthlyRevenuePotential": 4158,
+      "occupancyRate": 70,
+      "seasonality": {
+        "highMonths": ["June", "July", "August", "September"],
+        "lowMonths": ["January", "February", "March"],
+        "peakMonth": "July",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "caution",
+      "marketNotes": [
+        "Shared Housing Ordinance requires registration, $125 annual fee, and 2% surcharge on bookings",
+        "License required from Department of Business Affairs - 60-day approval process",
+        "River North, Loop, and Wicker Park show highest ADR and occupancy",
+        "Lollapalooza (August) and major conventions drive 50%+ rate spikes - book minimum stays",
+        "Harsh winters significantly impact January-March demand - plan for 40% revenue drop",
+        "Strong corporate travel market - optimize listings for business travelers mid-week"
+      ],
+      "competitionLevel": "medium",
+      "regulatoryRisk": "medium"
+    },
+    {
+      "city": "Houston",
+      "state": "TX",
+      "averageNightlyRate": 156,
+      "monthlyRevenuePotential": 3276,
+      "occupancyRate": 70,
+      "seasonality": {
+        "highMonths": ["February", "March", "October", "November"],
+        "lowMonths": ["July", "August"],
+        "peakMonth": "March",
+        "slowestMonth": "August"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Texas has no state income tax and minimal STR regulations - landlord-friendly market",
+        "Energy sector drives strong corporate extended stay demand - target 2BR+ for families",
+        "Medical Center area commands premium rates from patients and visiting medical professionals",
+        "Houston Livestock Show and Rodeo (March) drives highest annual demand",
+        "Summer months (July-August) see 25% occupancy drop due to extreme heat",
+        "Downtown, Montrose, and Heights neighborhoods show best revenue per square foot"
+      ],
+      "competitionLevel": "medium",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "Phoenix",
+      "state": "AZ",
+      "averageNightlyRate": 189,
+      "monthlyRevenuePotential": 4253,
+      "occupancyRate": 75,
+      "seasonality": {
+        "highMonths": ["January", "February", "March", "April"],
+        "lowMonths": ["June", "July", "August"],
+        "peakMonth": "February",
+        "slowestMonth": "July"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Arizona state law preempts local STR bans - one of the most operator-friendly states",
+        "Snowbird season (Jan-Apr) drives 80%+ occupancy and peak rates - critical revenue period",
+        "Spring Training (February-March) creates massive demand in Scottsdale/Tempe",
+        "Summer months see 50% rate reduction due to extreme heat - adjust pricing strategy accordingly",
+        "Scottsdale commands 30% premium over Phoenix proper - worth the higher acquisition cost",
+        "Properties with pools see 25% higher ADR year-round - essential amenity for this market"
+      ],
+      "competitionLevel": "medium",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "Philadelphia",
+      "state": "PA",
+      "averageNightlyRate": 175,
+      "monthlyRevenuePotential": 3675,
+      "occupancyRate": 70,
+      "seasonality": {
+        "highMonths": ["May", "June", "September", "October"],
+        "lowMonths": ["January", "February"],
+        "peakMonth": "June",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Limited STR regulations compared to other major Northeast cities - competitive advantage",
+        "Center City and Old City command highest rates - proximity to historic sites drives tourism",
+        "Strong healthcare and university demand - Hospital of UPenn and temple medical create year-round baseline",
+        "Eagles/Phillies game days can double nightly rates - implement dynamic pricing",
+        "University graduation season (May) drives family bookings - 3BR+ see highest demand",
+        "Consider Fishtown and Northern Liberties for lower acquisition costs with strong STR demand"
+      ],
+      "competitionLevel": "medium",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "San Antonio",
+      "state": "TX",
+      "averageNightlyRate": 145,
+      "monthlyRevenuePotential": 2900,
+      "occupancyRate": 67,
+      "seasonality": {
+        "highMonths": ["March", "April", "June", "July"],
+        "lowMonths": ["January", "September"],
+        "peakMonth": "March",
+        "slowestMonth": "September"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Texas-friendly regulatory environment with minimal STR restrictions",
+        "River Walk proximity is the #1 ADR driver - properties within walking distance command 35% premium",
+        "Fiesta San Antonio (April) and major conventions at Henry B. González center drive peak demand",
+        "Military base relocations create steady extended-stay demand - Fort Sam Houston, Lackland AFB",
+        "Alamo Heights and Pearl District emerging as premium neighborhoods for STR",
+        "Lower ADR than Austin but also lower acquisition costs - better cash-on-cash returns possible"
+      ],
+      "competitionLevel": "low",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "San Diego",
+      "state": "CA",
+      "averageNightlyRate": 231,
+      "monthlyRevenuePotential": 5130,
+      "occupancyRate": 74,
+      "seasonality": {
+        "highMonths": ["June", "July", "August", "September"],
+        "lowMonths": ["January", "February"],
+        "peakMonth": "July",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "caution",
+      "marketNotes": [
+        "CRITICAL: San Diego Municipal Code 5.11 limits whole-home STRs to Mission Beach zone only",
+        "Citywide, only home-sharing (host present) or 20+ day stays permitted in most areas",
+        "Mission Beach has tiered permit system - Tier 1-4 based on proximity to owner's residence",
+        "Comic-Con (July) drives highest rates of the year - 100%+ premium over baseline",
+        "Military presence (Navy, Marines) provides steady baseline demand from visitors and relocations",
+        "Consider furnished housing model (30+ days) to access La Jolla, Pacific Beach legally"
+      ],
+      "competitionLevel": "high",
+      "regulatoryRisk": "high"
+    },
+    {
+      "city": "Dallas",
+      "state": "TX",
+      "averageNightlyRate": 178,
+      "monthlyRevenuePotential": 3632,
+      "occupancyRate": 68,
+      "seasonality": {
+        "highMonths": ["March", "April", "October", "November"],
+        "lowMonths": ["July", "August"],
+        "peakMonth": "March",
+        "slowestMonth": "August"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Texas regulatory environment is STR-friendly with no state-level restrictions",
+        "Deep Ellum, Uptown, and Design District show highest ADR and occupancy rates",
+        "Corporate relocations from California tech companies driving extended stay demand",
+        "State Fair of Texas (September-October) creates major demand spike - book 3-night minimums",
+        "Cowboys/Rangers/Mavericks games drive weekend premiums in Downtown and Victory Park",
+        "DFW Airport proximity makes properties near Love Field attractive for business travelers"
+      ],
+      "competitionLevel": "medium",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "San Jose",
+      "state": "CA",
+      "averageNightlyRate": 215,
+      "monthlyRevenuePotential": 4515,
+      "occupancyRate": 70,
+      "seasonality": {
+        "highMonths": ["April", "May", "June", "September"],
+        "lowMonths": ["December", "January"],
+        "peakMonth": "May",
+        "slowestMonth": "December"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "caution",
+      "marketNotes": [
+        "City requires STR registration and Transient Occupancy Tax (TOT) collection",
+        "Tech industry drives strong corporate housing demand - longer stays from contractors",
+        "Downtown and Santana Row areas command highest rates from business travelers",
+        "Major tech conferences and Apple events drive significant demand spikes",
+        "Consider furnished corporate housing (30+ days) to serve tech relocations",
+        "Competition from hotels is high - differentiate with full kitchens and workspace amenities"
+      ],
+      "competitionLevel": "high",
+      "regulatoryRisk": "medium"
+    },
+    {
+      "city": "Austin",
+      "state": "TX",
+      "averageNightlyRate": 195,
+      "monthlyRevenuePotential": 4290,
+      "occupancyRate": 73,
+      "seasonality": {
+        "highMonths": ["March", "April", "October", "November"],
+        "lowMonths": ["January", "August"],
+        "peakMonth": "March",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "caution",
+      "marketNotes": [
+        "Type 2 STRs (non-owner-occupied) banned in residential zones since 2016 - verify zoning carefully",
+        "Type 1 (owner-occupied) and Type 3 (commercial zones) still permitted with license",
+        "SXSW (March) and ACL Festival (October) drive 150-200% rate increases - essential revenue events",
+        "East Austin and Downtown have most Type 3 eligible properties",
+        "Tech industry growth driving extended stay demand from relocating workers",
+        "Consider co-hosting with licensed Type 1 operators or targeting commercial-zoned properties only"
+      ],
+      "competitionLevel": "high",
+      "regulatoryRisk": "high"
+    },
+    {
+      "city": "Jacksonville",
+      "state": "FL",
+      "averageNightlyRate": 165,
+      "monthlyRevenuePotential": 3465,
+      "occupancyRate": 70,
+      "seasonality": {
+        "highMonths": ["March", "April", "June", "July"],
+        "lowMonths": ["September", "October"],
+        "peakMonth": "June",
+        "slowestMonth": "September"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Florida is generally STR-friendly with state preemption of many local restrictions",
+        "Beach communities (Atlantic Beach, Neptune Beach, Jax Beach) command 40% ADR premium",
+        "Georgia-Florida football weekend (October/November) is single highest revenue weekend",
+        "Riverside and San Marco neighborhoods popular with business travelers",
+        "Hurricane season (June-November) creates booking uncertainty - flexible cancellation policies essential",
+        "Mayo Clinic Jacksonville drives year-round medical tourism demand - 2BR+ for families"
+      ],
+      "competitionLevel": "low",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "Fort Worth",
+      "state": "TX",
+      "averageNightlyRate": 158,
+      "monthlyRevenuePotential": 3160,
+      "occupancyRate": 67,
+      "seasonality": {
+        "highMonths": ["March", "April", "October", "November"],
+        "lowMonths": ["July", "August"],
+        "peakMonth": "March",
+        "slowestMonth": "August"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Texas STR-friendly regulations apply - minimal restrictions on short-term rentals",
+        "Fort Worth Stockyards is primary tourism driver - proximity commands 25% ADR premium",
+        "Sundance Square and Downtown show strongest business travel demand",
+        "Lower acquisition costs than Dallas with spillover demand from DFW metro",
+        "Stock Show and Rodeo (January-February) drives significant winter demand",
+        "Near Southside and Fairmount emerging as trendy neighborhoods with STR potential"
+      ],
+      "competitionLevel": "low",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "Columbus",
+      "state": "OH",
+      "averageNightlyRate": 142,
+      "monthlyRevenuePotential": 2840,
+      "occupancyRate": 67,
+      "seasonality": {
+        "highMonths": ["April", "May", "September", "October"],
+        "lowMonths": ["January", "February"],
+        "peakMonth": "September",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "Limited STR regulation compared to coastal markets - registration may be required by zone",
+        "Ohio State football drives massive September-November demand - book 2-night minimums on game weekends",
+        "Short North, German Village, and Downtown most desirable STR neighborhoods",
+        "Large convention center drives steady business travel - target corporate amenities",
+        "Arnold Sports Festival (March) is single largest annual event - rates triple",
+        "Strong healthcare presence (OSU Medical, Nationwide Children's) creates family extended-stay demand"
+      ],
+      "competitionLevel": "low",
+      "regulatoryRisk": "low"
+    },
+    {
+      "city": "Charlotte",
+      "state": "NC",
+      "averageNightlyRate": 168,
+      "monthlyRevenuePotential": 3528,
+      "occupancyRate": 70,
+      "seasonality": {
+        "highMonths": ["March", "April", "September", "October"],
+        "lowMonths": ["January", "July"],
+        "peakMonth": "April",
+        "slowestMonth": "January"
+      },
+      "recommendedPropertyType": "2BR",
+      "recommendation": "go",
+      "marketNotes": [
+        "North Carolina state law limits local STR restrictions - operator-friendly environment",
+        "Uptown Charlotte commands highest ADR with corporate travel demand from banking sector",
+        "NASCAR races (Coca-Cola 600) and Panthers games drive significant weekend premiums",
+        "South End and NoDa emerging as trendy STR neighborhoods with younger traveler appeal",
+        "Bank of America, Wells Fargo, and Duke Energy headquarters drive weekday corporate demand",
+        "Charlotte Douglas Airport is major hub - strong demand from flight crew layovers and connections"
+      ],
+      "competitionLevel": "medium",
+      "regulatoryRisk": "low"
+    }
+  ]
+}
